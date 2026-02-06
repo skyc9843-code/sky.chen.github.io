@@ -18,6 +18,13 @@
             font-family: 'Inter', sans-serif;
             -webkit-font-smoothing: antialiased;
         }
+        /* 【新增】一键解决所有图片适配问题：不拉伸、比例固定 */
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        object-position: center;
+    }
         .serif { font-family: 'Playfair Display', serif; }
         .border-hairline { border: 0.5px solid var(--monocle-black); }
         .text-brand { color: var(--brand-green); }
@@ -331,7 +338,7 @@
                 details: `<div class="space-y-16">
                     <div class="space-y-6">
                         <h4 class="text-xl font-bold text-brand border-b pb-2">安踏冠军系列</h4>
-                        <p class="text-sm opacity-70 italic serif leading-relaxed">不仅品牌活动和产品创意文案撰写。</p>
+                        <p class="text-sm opacity-70 italic serif leading-relaxed">负责品牌活动和产品创意文案的撰写。</p>
                         <!-- 【图片替换】：安踏二级页展示图 -->
                         <img src="anta01.jpg">
                         <div class="text-center pt-4"><a href="https://mp.weixin.qq.com/s/TLhKyYCp-sthrNFikxIwNQ" target="_blank" class="text-xs font-bold border-b text-brand uppercase pb-1">查看案例详情 →</a></div>
