@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKY | Strategic Content Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --monocle-paper: #F5F5F3;
+            --monocle-black: #1A1A1A;
+            --brand-green: #00818a; 
+        }
+        body {
+            background-color: var(--monocle-paper);
+            color: var(--monocle-black);
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .serif { font-family: 'Playfair Display', serif; }
+        .border-hairline { border: 0.5px solid var(--monocle-black); }
+        .text-brand { color: var(--brand-green); }
+        .bg-brand { background-color: var(--brand-green); }
+        
+        .filter-btn { transition: all 0.3s; cursor: pointer; opacity: 0.3; font-size: 10px; text-transform: uppercase; font-weight: 700; letter-spacing: 0.1em; }
+        .filter-btn:hover, .filter-btn.active { opacity: 1; color: var(--brand-green); }
+
+        .work-card { cursor: pointer; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+        .work-card img { filter: grayscale(100%); transition: 0.8s filter ease; }
+        .work-card:hover img { filter: grayscale(0%); }
+
+        #case-modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--monocle-paper); z-index: 100; overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 1.75rem; white-space: normal; }
+            .vertical-nav { display: none; }
+        }
+    </style>
+</head>
+<body class="selection:bg-brand selection:text-white">
+
+    <!-- 导航栏 -->
+    <nav class="fixed w-full z-50 bg-[#F5F5F3]/80 backdrop-blur-md border-b-[0.5px] border-black">
+        <div class="max-w-[1440px] mx-auto flex justify-between items-center px-6 py-4">
+            <a href="#home" class="serif text-xl font-bold tracking-tighter text-brand italic underline decoration-1 underline-offset-4">Sky.</a>
+            <div class="hidden md:flex gap-10 text-[10px] uppercase font-bold tracking-widest">
+                <a href="#strategy" class="hover:text-brand transition-colors">Strategy</a>
+                <a href="#works" class="hover:text-brand transition-colors">Works</a>
+                <a href="#about" class="hover:text-brand transition-colors">About</a>
+            </div>
+            <a href="#contact" class="serif italic text-lg hover:text-brand transition-all">Connect.</a>
+        </div>
+    </nav>
+
+    <!-- Page 1: Hero -->
+    <section id="home" class="min-h-[90vh] flex flex-col justify-end px-6 pb-24">
+        <div class="max-w-[1440px] mx-auto w-full">
+            <h2 class="serif text-2xl md:text-4xl italic text-brand mb-6">你好，我是 Sky—</h2>
+            <h1 class="hero-title serif text-4xl md:text-[62px] leading-tight font-bold tracking-tight mb-10 whitespace-nowrap">
+                用内容驱动增长的营销人。
+            </h1>
+            <p class="text-lg md:text-3xl font-light opacity-40 serif italic max-w-4xl leading-relaxed">
+                Deciphering brand souls and driving growth across global markets through content.
+            </p>
+        </div>
+    </section>
+
+    <!-- Page 2: Strategy -->
+    <section id="strategy" class="py-32 border-t-[0.5px] border-black bg-white">
+        <div class="max-w-[1440px] mx-auto px-6">
+            <h2 class="serif text-4xl md:text-[68px] font-bold tracking-tight mb-24 leading-none italic">
+                如何解构一个复杂的品牌议题？
+            </h2>
+            <div class="grid md:grid-cols-3 gap-0 border-[0.5px] border-black shadow-sm">
+                <div class="p-12 border-r-[0.5px] border-black hover:bg-neutral-50 transition-colors">
+                    <span class="serif text-4xl italic block mb-10 opacity-20 text-brand">01.</span>
+                    <h3 class="text-xs font-bold uppercase tracking-widest mb-6">专业解构与转化</h3>
+                    <p class="text-sm leading-relaxed opacity-70">擅长打破行业壁垒，将晦涩的行业技术或商业逻辑，翻译成能与受众产生共鸣的直观叙事，致力于在“产品专业性”与“大众易读性”之间寻找平衡点。</p>
+                </div>
+                <div class="p-12 border-r-[0.5px] border-black hover:bg-neutral-50 transition-colors">
+                    <span class="serif text-4xl italic block mb-10 opacity-20 text-brand">02.</span>
+                    <h3 class="text-xs font-bold uppercase tracking-widest mb-6">转化导向的创意</h3>
+                    <p class="text-sm leading-relaxed opacity-70">通过对痛点的精准捕捉和情绪的深度调动，将品牌好感度直接转化为用户的行动力。通过内容策略有效支持了获客转化。</p>
+                </div>
+                <div class="p-12 hover:bg-neutral-50 transition-colors">
+                    <span class="serif text-4xl italic block mb-10 opacity-20 text-brand">03.</span>
+                    <h3 class="text-xs font-bold uppercase tracking-widest mb-6">品牌内涵的深度挖掘</h3>
+                    <p class="text-sm leading-relaxed opacity-70">系统性地拆解行业，挖掘品牌特有的文化内核。无论是传统白酒的经典传承，还是高端家电的精工基因，均能在变幻的媒体环境中，确保品牌灵魂的统一与延续。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Page 3: Works -->
+    <section id="works" class="py-32 px-6 border-t-[0.5px] border-black">
+        <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row gap-16">
+            <aside class="md:w-56 flex-shrink-0 vertical-nav">
+                <div class="sticky top-32 space-y-10">
+                    <h2 class="serif text-3xl italic font-bold">Works Archive.</h2>
+                    <nav class="flex flex-col gap-5">
+                        <button onclick="filterWorks('all')" class="filter-btn active text-left">All</button>
+                        <button onclick="filterWorks('ec')" class="filter-btn text-left">E-commerce</button>
+                        <button onclick="filterWorks('finance')" class="filter-btn text-left">Finance</button>
+                        <button onclick="filterWorks('edu')" class="filter-btn text-left">Immigration</button>
+                        <button onclick="filterWorks('fmcg')" class="filter-btn text-left">FMCG</button>
+                        <button onclick="filterWorks('tech')" class="filter-btn text-left">Technology</button>
+                        <button onclick="filterWorks('fashion')" class="filter-btn text-left">Fashion & Sports</button>
+                    </nav>
+                </div>
+            </aside>
+
+            <div id="works-grid" class="flex-grow grid md:grid-cols-2 gap-12">
+                
+                <!-- 西门子外部卡片 -->
+                <div class="work-card group" onclick="openCase('siemens')" data-category="ec">
+                    <div class="aspect-[16/10] bg-stone-200 overflow-hidden border-[0.5px] border-black">
+                        <!-- 【图片替换】：西门子外部封面图 (建议比例 16:10，内容：西门子品牌主图) -->
+                        <img src="simensc.jpg">
+                    </div>
+                    <h3 class="serif italic text-xl font-bold mt-4">电商类</h3>
+                </div>
+
+                <!-- 金融类外部卡片 -->
+                <div class="work-card group" onclick="openCase('finance')" data-category="finance">
+                    <div class="aspect-[16/10] bg-stone-200 overflow-hidden border-[0.5px] border-black">
+                        <!-- 【图片替换】：金融类外部封面图 (建议比例 16:10，内容：体现金融质感的建筑或办公场景) -->
+                        <img src="financec.jpg">
+                    </div>
+                    <h3 class="serif italic text-xl font-bold mt-4">金融保险类</h3>
+                </div>
+
+                <!-- 留学移民外部卡片 -->
+                <div class="work-card group" onclick="openCase('education')" data-category="edu">
+                    <div class="aspect-[16/10] bg-stone-200 overflow-hidden border-[0.5px] border-black">
+                        <!-- 【图片替换】：留学移民外部封面图 (建议比例 16:10，内容：校园或旅行氛围图) -->
+                        <img src="educ.jpg">
+                    </div>
+                    <h3 class="serif italic text-xl font-bold mt-4">留学移民类</h3>
+                </div>
+
+                <!-- 五粮液外部卡片 -->
+                <div class="work-card group" onclick="openCase('wuliangye')" data-category="fmcg">
+                    <div class="aspect-[16/10] bg-stone-200 overflow-hidden border-[0.5px] border-black">
+                        <!-- 【图片替换】：快消酒水外部封面图 (建议比例 16:10，内容：五粮液产品或品牌主视觉) -->
+                        <img src="fmcgc.jpg">
+                    </div>
+                    <h3 class="serif italic text-xl font-bold mt-4">快消酒水类</h3>
+                </div>
+
+                <!-- ASM外部卡片 -->
+                <div class="work-card group" onclick="openCase('asm')" data-category="tech">
+                    <div class="aspect-[16/10] bg-stone-200 overflow-hidden border-[0.5px] border-black">
+                        <!-- 【图片替换】：半导体类外部封面图 (建议比例 16:10，内容：科技感、芯片或生产线) -->
+                        <img src="techc.jpg">
+                    </div>
+                    <h3 class="serif italic text-xl font-bold mt-4">半导体类</h3>
+                </div>
+
+                <!-- 安踏外部卡片 -->
+                <div class="work-card group" onclick="openCase('fashion')" data-category="fashion">
+                    <div class="aspect-[16/10] bg-stone-200 overflow-hidden border-[0.5px] border-black">
+                        <!-- 【图片替换】：运动时尚类外部封面图 (建议比例 16:10，内容：安踏高黎贡赛事或运动瞬间) -->
+                        <img src="spprtsc.png">
+                    </div>
+                    <h3 class="serif italic text-xl font-bold mt-4">运动时尚类</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Modal -->
+    <div id="case-modal">
+        <div class="sticky top-0 bg-[#F5F5F3] border-b-[0.5px] border-black px-6 py-6 flex justify-between items-center z-[101]">
+            <span id="modal-brand" class="serif text-xl italic font-bold text-brand">Case Detail</span>
+            <button onclick="closeCase()" class="text-[10px] uppercase font-bold tracking-widest border-hairline px-6 py-2 hover:bg-black hover:text-white">关闭 [X]</button>
+        </div>
+        <div class="max-w-5xl mx-auto px-6 py-20" id="modal-content"></div>
+    </div>
+
+    <!-- Page 4: About -->
+    <section id="about" class="py-40 px-6 border-t-[0.5px] border-black bg-[#1A1A1A] text-white">
+        <div class="max-w-[1440px] mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="flex justify-center">
+                <div class="w-24 h-24 rounded-full border border-brand/50 p-1 overflow-hidden">
+                    <!-- 【图片替换】：个人简历圆形头像 (建议 1:1 正方形图，会自动切成圆) -->
+                    <img src="photo.jpeg">
+                </div>
+            </div>
+            <div class="max-w-xl">
+                <h2 class="serif text-4xl italic mb-10 text-brand">About Sky.Chen</h2>
+                <div class="space-y-8 text-lg font-light leading-relaxed opacity-80 serif italic">
+                    <p>广告学与工商管理双学位背景，以跨学科视角构建品牌内容，在感性叙事与商业逻辑之间找到平衡。</p>
+                    <p>十年内容与品牌经验，服务 20 余个国内外客户。策略是骨架，文案是感知——两者并行，品牌才会被记住。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-40 px-6 border-t-[0.5px] border-black text-center bg-white">
+        <h2 class="serif text-7xl md:text-[90px] italic mb-20 tracking-tighter">Connect.</h2>
+        <div class="grid md:grid-cols-3 gap-10 max-w-4xl mx-auto text-left">
+            <div class="p-8 border-hairline hover:border-brand transition-all">
+                <span class="text-brand text-[9px] uppercase font-bold tracking-widest block mb-2 opacity-50">WeChat</span>
+                <p class="text-xl font-medium tracking-tight">sky417475565</p>
+            </div>
+            <div class="p-8 border-hairline hover:border-brand transition-all">
+                <span class="text-brand text-[9px] uppercase font-bold tracking-widest block mb-2 opacity-50">Rednote</span>
+                <p class="text-xl font-medium tracking-tight">Sky的工作站</p>
+            </div>
+            <a href="https://www.linkedin.com/in/sky-chen-24ab72296" target="_blank" class="p-8 border-hairline hover:border-brand transition-all block group">
+                <span class="text-brand text-[9px] uppercase font-bold tracking-widest block mb-2 opacity-50">LinkedIn</span>
+                <p class="text-xl font-medium tracking-tight underline decoration-brand underline-offset-4">Sky Chen</p>
+            </a>
+        </div>
+        <div class="mt-32 text-[10px] uppercase opacity-30 italic">© Sky.Chen / Strategy & Content Expert</div>
+    </footer>
+
+    <script>
+        const caseData = {
+            siemens: {
+                brand: "西门子品牌创意营销",
+                details: `<div class="space-y-12">
+                    <!-- 【图片替换】：西门子二级页头图 (大长图) -->
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200" class="w-full border-hairline shadow-sm">
+                    <div class="border-[0.5px] border-black p-10 bg-white italic serif text-sm leading-relaxed">
+                        “西门子电商节营销及日常创意传播。通过创意主题、短视频、社媒文章、新闻稿、产品海报等内容形式，将‘德系精工’基因转化为品牌溢价与销量的双向转化。”
+                    </div>
+                    <div class="grid grid-cols-2 gap-8">
+                        <!-- 【图片替换】：左侧 2:3 纵向配图 -->
+                        <div class="aspect-[2/3] bg-stone-200 border-hairline overflow-hidden"><img src="simens01.png"></div>
+                        <!-- 【图片替换】：右侧 2:3 纵向配图 -->
+                        <div class="aspect-[2/3] bg-stone-200 border-hairline overflow-hidden"><img src="simens02.png"></div>
+                    </div>
+                    <div class="p-8 border-hairline text-center">
+                        <a href="https://mp.weixin.qq.com/s/p5diQm70NiC6aYQ0w0r5Kw" target="_blank" class="text-xs font-bold uppercase text-brand border-b border-brand pb-1">查看案例详情 →</a>
+                    </div>
+                </div>`
+            },
+            wuliangye: {
+                brand: "快消酒水类 / 五粮液：传统品牌年轻化",
+                details: `<div class="space-y-12">
+                    <!-- 【图片替换】：五粮液二级页头图 -->
+                    <img src="wuliangye01.png">
+                    <div class="border-[0.5px] border-black p-10 bg-white italic serif text-sm leading-relaxed">
+                        “负责五粮液专卖店公众号的起号及运营。通过‘五粮中国宴，和美中国年’等主题策划，在数字化语境中延续白酒品牌内核。”
+                    </div>
+                    <div class="grid grid-cols-2 gap-8">
+                        <!-- 【图片替换】：五粮液 2:3 配图1 -->
+                        <div class="aspect-[2/3] bg-stone-200 border-hairline overflow-hidden"><img src="wuliangyea.png"></div>
+                        <!-- 【图片替换】：五粮液 2:3 配图2 -->
+                        <div class="aspect-[2/3] bg-stone-200 border-hairline overflow-hidden"><img src="wuliangyeb.png"></div>
+                    </div>
+                    <div class="p-8 border-hairline text-center">
+                        <a href="https://mp.weixin.qq.com/s/pu2S-_Y8F-_6bQcmgBY1nQ" target="_blank" class="text-xs font-bold uppercase text-brand border-b border-brand pb-1">查看案例详情 →</a>
+                    </div>
+                </div>`
+            },
+            finance: {
+                brand: "金融保险类 / 品牌内容建设",
+                details: `<div class="space-y-16">
+                    <div class="space-y-6">
+                        <h4 class="text-xl font-bold text-brand border-b pb-2">南京银行</h4>
+                        <p class="text-sm opacity-70 italic serif leading-relaxed">品牌与金融产品创意推广：在严密合规的前提下，将抽象的金融产品转化为具体的“商业场景描述”。</p>
+                        <div class="grid grid-cols-2 gap-8">
+                            <!-- 【图片替换】：南京银行 2:3 配图1 -->
+                            <div class="aspect-[2/3] bg-stone-200 border-hairline overflow-hidden"><img src="njbank01.png"></div>
+                            <!-- 【图片替换】：南京银行 2:3 配图2 -->
+                            <div class="aspect-[2/3] bg-stone-200 border-hairline overflow-hidden"><img src="njbank02.png"></div>
+                        </div>
+                    </div>
+                    <div class="space-y-6">
+                        <h4 class="text-xl font-bold text-brand border-b pb-2">PayPal</h4>
+                        <p class="text-sm opacity-70 italic serif leading-relaxed">针对企业客户，拆解全球支付逻辑，大幅提升本土语境下的易读性。</p>
+                        <!-- 【图片替换】：PayPal 案例截图 (16:9 比例) -->
+                        <img src="paypal01.png">
+                    </div>
+                    <div class="space-y-6">
+                        <h4 class="text-xl font-bold text-brand border-b pb-2">永明金融</h4>
+                        <p class="text-sm opacity-70 italic serif leading-relaxed">社媒内容撰写与管理，在保险合规前提下保障品牌表达一致、稳定。</p>
+                        <!-- 【图片替换】：永明金融案例截图 -->
+                        <img src="yongming01.jpg">
+                        <div class="pt-4 text-center">
+                            <a href="https://mp.weixin.qq.com/s/GMrSKprEwAmFuNBH6KKJ0w" target="_blank" class="text-xs font-bold uppercase text-brand border-b border-brand pb-1">查看案例详情 →</a>
+                        </div>
+                    </div>
+                </div>`
+            },
+            education: {
+                brand: "留学移民类 / 社媒内容运营",
+                details: `<div class="space-y-16">
+                    <!-- 【图片替换】：留学教育类二级页顶部大图 -->
+                    <img src="uod01.jpg">
+                    <div class="grid md:grid-cols-3 gap-10">
+                        <div class="space-y-6">
+                            <h4 class="text-lg font-bold text-brand italic underline decoration-1 underline-offset-4">邓迪大学</h4>
+                            <p class="text-xs opacity-60 leading-relaxed">英国大学社媒矩阵账号运营，实现线索质量与品牌知名度的双重提升。</p>
+                            <a href="https://mp.weixin.qq.com/s/MXQb0y8w56oSpAzGVf_4nQ" target="_blank" class="text-[10px] font-bold border-b border-black pb-1">查看案例详情 →</a>
+                        </div>
+                        <div class="space-y-6">
+                            <h4 class="text-lg font-bold text-brand italic underline decoration-1 underline-offset-4">Unite Students</h4>
+                            <p class="text-xs opacity-60 leading-relaxed">通过小红书账号内容运营，驱动精准获客。</p>
+                            <a href="https://www.xiaohongshu.com/user/profile/5f5cc0eb00000000010006c9" target="_blank" class="text-[10px] font-bold border-b border-black pb-1">查看案例详情 →</a>
+                        </div>
+                        <div class="space-y-6">
+                            <h4 class="text-lg font-bold text-brand italic underline decoration-1 underline-offset-4">某移民机构</h4>
+                            <p class="text-xs opacity-60 leading-relaxed">海外移民机构GTM线上推广，社媒账号从0到1的搭建与运营。</p>
+                        </div>
+                    </div>
+                </div>`
+            },
+            asm: {
+                brand: "Technology / 半导体类",
+                details: `<div class="space-y-12">
+                    <!-- 【图片替换】：ASM二级页主图 -->
+                    <img src="techc.jpg">
+                    <div class="border-[0.5px] border-black p-10 bg-white italic serif text-sm leading-relaxed">
+                        “先晶半导体（ASM）公众号内容策划与撰写，将半导体知识重构为大众易读内容。”
+                    </div>
+                    <div class="p-8 border-hairline text-center">
+                        <a href="https://mp.weixin.qq.com/s/F0_N7lZI9YCrPOK-BvbW4A" target="_blank" class="text-xs font-bold uppercase text-brand border-b border-brand pb-1">查看案例详情 →</a>
+                    </div>
+                </div>`
+            },
+            fashion: {
+                brand: "Fashion / 产品和活动的宣传文案",
+                details: `<div class="space-y-16">
+                    <div class="space-y-6">
+                        <h4 class="text-xl font-bold text-brand border-b pb-2">安踏冠军系列</h4>
+                        <p class="text-sm opacity-70 italic serif leading-relaxed">不仅品牌活动和产品创意文案撰写。</p>
+                        <!-- 【图片替换】：安踏二级页展示图 -->
+                        <img src="anta01.jpg">
+                        <div class="text-center pt-4"><a href="https://mp.weixin.qq.com/s/TLhKyYCp-sthrNFikxIwNQ" target="_blank" class="text-xs font-bold border-b text-brand uppercase pb-1">查看案例详情 →</a></div>
+                    </div>
+                    <div class="space-y-6">
+                        <h4 class="text-xl font-bold text-brand border-b pb-2">劲霸男装</h4>
+                        <p class="text-sm opacity-70 italic serif leading-relaxed">新品上市创意化传播策划。主要负责品牌叙事构建、宣传片脚本策划等核心环节，实现产品力的情感化落地。</p>
+                        <!-- 【图片替换】：劲霸案例展示图 -->
+                        <img src="jinba01.jpg">
+                    </div>
+                </div>`
+            }
+        };
+
+        function openCase(id) {
+            const data = caseData[id];
+            if(!data) return;
+            document.getElementById('modal-brand').innerText = data.brand;
+            document.getElementById('modal-content').innerHTML = data.details;
+            document.getElementById('case-modal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCase() {
+            document.getElementById('case-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function filterWorks(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            const activeBtn = Array.from(buttons).find(b => b.onclick.toString().includes(category));
+            if(activeBtn) activeBtn.classList.add('active');
+
+            const cards = document.querySelectorAll('.work-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                    setTimeout(() => card.style.opacity = '1', 10);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => card.style.display = 'none', 300);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
